@@ -1,53 +1,69 @@
-#include "CircularBufferList\CircularBufferList.h"
-#include "CircularBufferArray\CircularBufferArray.h"
+#include "CircularBufferList.h"
+#include "CircularBufferArray.h"
+
+
+#define sep(s) std::cout << std::string(15, '.') + s + std::string(15, '.') + '\n'
+
+template <typename T>
+void fill_int(T& buffer, size_t count) {
+
+    for (int i = 1; i <= count; ++i) {
+        std::cout << "Pushed: " << i << std::endl;
+        buffer.push(i);
+        std::cout << "Buffer container: ";
+        buffer.view();
+        std::cout << std::endl;
+    }
+}
+
+template <typename T>
+void fill_char(T& buffer, size_t count) {
+
+    for (int i = 1; i <= count; ++i) {
+        std::cout << "Pushed: " << static_cast<char>('a' + i - 1) << std::endl;
+        buffer.push(static_cast<char>('a' + i - 1));
+        std::cout << "Buffer container: ";
+        buffer.view();
+        std::cout << std::endl;
+    }
+}
+
+template <typename T>
+void clear(T& buffer) {
+    while (!buffer.empty()) {
+        std::cout << "Poped: " << buffer.pop() << std::endl;
+        std::cout << "Buffer container: ";
+        buffer.view();
+        std::cout << std::endl;
+    }
+}
 
 
 int main() {
-    CircularBufferList<int> lbuffer(5);
-    
-    std::string hashLine(15, '.');
+    CircularBufferList<int> lbufferInt(5);
 
-    std::cout << hashLine << "List" << hashLine <<std::endl;
-
-    for (int i = 1; i <= 7; ++i) {
-        std::cout << "Pushed: " << i << std::endl;
-        lbuffer.push(i);
-        std::cout << "Buffer container: ";
-        lbuffer.view();
-        std::cout << std::endl;
-    }
-
+    sep("List<int>");
+    fill_int(lbufferInt, 7);
     std::cout << '\n';
-
-    while (!lbuffer.empty()) {
-        std::cout << "Poped: " << lbuffer.pop() << std::endl;
-        std::cout << "Buffer container: ";
-        lbuffer.view();
-        std::cout << std::endl;
-    }
+    clear(lbufferInt);
     
     /////////////////////////////////////////////////////////////////
-
-    std::cout << hashLine << "Array" << hashLine << std::endl;
-    CircularBufferArray<int> abuffer(5);
-
-    for (int i = 1; i <= 7; ++i) {
-        std::cout << "Pushed: " << i << std::endl;
-        abuffer.push(i);
-        std::cout << "Buffer container: ";
-        abuffer.view();
-        std::cout << std::endl;
-    }
-
+    CircularBufferArray<int> abufferInt(5);
+    
+    sep("Array<int>");
+    
+    fill_int(abufferInt, 7);
     std::cout << '\n';
+    clear(abufferInt);
+    
+    /////////////////////////////////////////////////////////////////
+    CircularBufferList<char> lbufferChar(5);
 
-    while (!abuffer.empty()) {
-        std::cout << "Poped: " << abuffer.pop() << std::endl;
-        std::cout << "Buffer container: ";
-        abuffer.view();
-        std::cout << std::endl;
-    }
+    sep("List<char>");
 
+    fill_char(lbufferChar, 7);
+    std::cout << '\n';
+    clear(lbufferChar);
 
     return 0;
 }

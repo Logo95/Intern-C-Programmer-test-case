@@ -87,6 +87,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\seriy\GitTest\task_2\CircularBuffer\CircularBuffer\CircularBufferList;C:\Users\seriy\GitTest\task_2\CircularBuffer\CircularBuffer\CircularBufferArray;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,13 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CircularBufferArray\CircularBufferArray.h" />
-    <ClInclude Include="CircularBufferList\CircularBufferList.h" />
+    <ClCompile Include="CircularBufferArray.cpp" />
+    <ClCompile Include="CircularBufferList.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CircularBufferArray\CircularBufferArray.cpp" />
-    <ClCompile Include="CircularBufferList\CircularBufferList.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClInclude Include="CircularBufferArray.h" />
+    <ClInclude Include="CircularBufferList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

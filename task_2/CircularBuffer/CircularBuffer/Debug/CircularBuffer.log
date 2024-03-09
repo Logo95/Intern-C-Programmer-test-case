@@ -1,2 +1,8 @@
-﻿  CircularBufferList.cpp
-  CircularBuffer.vcxproj -> C:\Users\seriy\source\repos\CircularBuffer\Debug\CircularBuffer.exe
+﻿  Source.cpp
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall CircularBufferList<int>::CircularBufferList<int>(unsigned int)" (??0?$CircularBufferList@H@@QAE@I@Z) в функции _main
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall CircularBufferList<int>::push(int)" (?push@?$CircularBufferList@H@@QAEXH@Z) в функции _main
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall CircularBufferList<int>::view(void)const " (?view@?$CircularBufferList@H@@QBEXXZ) в функции _main
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall CircularBufferArray<int>::CircularBufferArray<int>(unsigned int)" (??0?$CircularBufferArray@H@@QAE@I@Z) в функции _main
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall CircularBufferArray<int>::push(int)" (?push@?$CircularBufferArray@H@@QAEXH@Z) в функции _main
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall CircularBufferArray<int>::view(void)const " (?view@?$CircularBufferArray@H@@QBEXXZ) в функции _main
+C:\Users\seriy\GitTest\task_2\CircularBuffer\Debug\CircularBuffer.exe : fatal error LNK1120: неразрешенных внешних элементов: 6
